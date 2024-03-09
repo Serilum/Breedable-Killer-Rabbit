@@ -1,9 +1,8 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.natamus.breedablekillerrabbit.forge.mixin",
+  "package": "com.natamus.breedablekillerrabbit.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "breedablekillerrabbit_forge.refmap.json",
   "mixins": [
 
   ],

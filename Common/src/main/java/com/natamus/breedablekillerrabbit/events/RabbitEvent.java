@@ -2,7 +2,7 @@ package com.natamus.breedablekillerrabbit.events;
 
 import com.natamus.breedablekillerrabbit.config.ConfigHandler;
 import com.natamus.collective.data.GlobalVariables;
-import com.natamus.collective.functions.StringFunctions;
+import com.natamus.collective.functions.MessageFunctions;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -39,7 +39,7 @@ public class RabbitEvent {
 			for (Entity entityaround : world.getEntities(null, new AABB(vec.x-10, vec.y-10, vec.z-10, vec.x+10, vec.y+10, vec.z+10))) {
 				if (entityaround instanceof Player) {
 					Player player = (Player)entityaround;
-					StringFunctions.sendMessage(player, "A killer rabbit has been born! Are you far enough away or do you have a golden carrot to share?", ChatFormatting.DARK_GREEN);
+					MessageFunctions.sendMessage(player, "A killer rabbit has been born! Are you far enough away or do you have a golden carrot to share?", ChatFormatting.DARK_GREEN);
 					return true;
 				}
 			}
@@ -68,13 +68,13 @@ public class RabbitEvent {
 			return InteractionResult.PASS;
 		}
 		if (rabbit.getItemInHand(InteractionHand.MAIN_HAND).getItem().equals(Items.GOLDEN_CARROT)) {
-			StringFunctions.sendMessage(player, "The killer rabbit has already been tamed.", ChatFormatting.DARK_GREEN);
+			MessageFunctions.sendMessage(player, "The killer rabbit has already been tamed.", ChatFormatting.DARK_GREEN);
 			return InteractionResult.PASS;
 		}
 		
 		rabbit.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.GOLDEN_CARROT, 1));
 		itemstack.shrink(1);
-		StringFunctions.sendMessage(player, "The killer rabbit has been tamed!", ChatFormatting.DARK_GREEN);
+		MessageFunctions.sendMessage(player, "The killer rabbit has been tamed!", ChatFormatting.DARK_GREEN);
 		return InteractionResult.SUCCESS;
 	}
 	
@@ -133,7 +133,7 @@ public class RabbitEvent {
 		}
 		
 		if (((Rabbit)source).getRabbitType() != 99) {
-			StringFunctions.sendMessage((Player)entity, "The killer rabbit wants a golden carrot!", ChatFormatting.RED);
+			MessageFunctions.sendMessage((Player)entity, "The killer rabbit wants a golden carrot!", ChatFormatting.RED);
 		}
 		
 		return damageAmount;
