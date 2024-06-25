@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="breedablekillerrabbit"
-version="3.5"
+version="3.6"
 displayName="Breedable Killer Rabbit"
 displayURL="https://serilum.com/mod/breedable-killer-rabbit"
 authors="Rick South"
@@ -14,7 +14,7 @@ description='''A minimalistic configurable mod which makes the killer rabbit tam
 '''
 credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
 
-Alister, Andrean Olgo, aternosorg, BirdieMiner, Cherriesaurus, Jeremy Langford, Michael W. S., Rare Students, Shana Gitnick, Tyler Behl   
+Alister, Andrean Olgo, aternosorg, BirdieMiner, Cherriesaurus, Michael W. S., Shana Gitnick, Sukhmai, Tyler Behl   
 
 If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
 '''
@@ -22,7 +22,7 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
 [[dependencies.breedablekillerrabbit]]
     modId="collective"
     type="required"
-    versionRange="[7.61,)"
+    versionRange="[7.64,)"
     ordering="NONE"
     side="BOTH"
 
@@ -30,6 +30,13 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
     modId="minecraft"
     type="required"
     versionRange="[1.21]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.breedablekillerrabbit]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.0.31,)"
     ordering="NONE"
     side="BOTH"
 
