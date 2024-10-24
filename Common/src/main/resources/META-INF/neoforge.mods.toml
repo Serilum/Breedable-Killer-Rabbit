@@ -1,0 +1,44 @@
+modLoader="javafml"
+loaderVersion="*"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Breedable%20Killer%20Rabbit"
+logoFile="icon.png"
+
+[[mods]]
+modId="breedablekillerrabbit"
+version="3.7"
+displayName="Breedable Killer Rabbit"
+displayURL="https://serilum.com/mod/breedable-killer-rabbit"
+authors="Rick South"
+description='''A minimalistic configurable mod which makes the killer rabbit tamable and available by breeding.
+'''
+credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
+
+Alister, Andrean Olgo, aternosorg, Cherriesaurus, kate1073, Michael W. S., Tyler Behl, XAgent   
+
+If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
+'''
+
+[[dependencies.breedablekillerrabbit]]
+    modId="collective"
+    type="required"
+    versionRange="[7.86,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.breedablekillerrabbit]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.2,1.21.3]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.breedablekillerrabbit]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.0.31,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[mixins]]
+    config = "breedablekillerrabbit.mixins.json"
