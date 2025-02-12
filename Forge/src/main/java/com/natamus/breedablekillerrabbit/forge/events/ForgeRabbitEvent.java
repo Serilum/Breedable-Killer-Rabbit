@@ -13,12 +13,10 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber
 public class ForgeRabbitEvent {
 	@SubscribeEvent
-	public void onBaby(BabyEntitySpawnEvent e) {
+	public static void onBaby(BabyEntitySpawnEvent e) {
 		AgeableMob child = e.getChild();
 		Level level = child.level();
 		if (level.isClientSide) {
@@ -35,7 +33,7 @@ public class ForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public void onEntityInteract(PlayerInteractEvent.EntityInteract e) {
+	public static void onEntityInteract(PlayerInteractEvent.EntityInteract e) {
 		Level world = e.getLevel();
 		if (world.isClientSide) {
 			return;
@@ -45,7 +43,7 @@ public class ForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public void onTarget(LivingAttackEvent e) {
+	public static void onTarget(LivingAttackEvent e) {
 		Entity entity = e.getEntity();
 		if (!RabbitEvent.onTarget(entity.level(), entity, e.getSource(), e.getAmount())) {
 			e.setCanceled(true);
@@ -53,12 +51,12 @@ public class ForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public void mobSpawn(EntityJoinLevelEvent e) {
+	public static void mobSpawn(EntityJoinLevelEvent e) {
 		RabbitEvent.mobSpawn(e.getLevel(), e.getEntity());
 	}
 	
 	@SubscribeEvent
-	public void onPlayerDamage(LivingHurtEvent e) {
+	public static void onPlayerDamage(LivingHurtEvent e) {
 		Entity entity = e.getEntity();
 		RabbitEvent.onPlayerDamage(entity.level(), entity, e.getSource(), e.getAmount());
 	}
