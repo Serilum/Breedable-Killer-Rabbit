@@ -39,7 +39,7 @@ public class RabbitEvent {
 			Vec3 vec = offspring.position();
 			for (Entity entityaround : world.getEntities(null, new AABB(vec.x-10, vec.y-10, vec.z-10, vec.x+10, vec.y+10, vec.z+10))) {
 				if (entityaround instanceof Player player) {
-                    MessageFunctions.sendMessage(player, "A killer rabbit has been born! Are you far enough away or do you have a golden carrot to share?", ChatFormatting.DARK_GREEN);
+                    MessageFunctions.sendTranslatableMessage(player, "collective.breedablekillerrabbit.message.killerrabbitborn", ChatFormatting.DARK_GREEN);
 					return true;
 				}
 			}
@@ -68,13 +68,13 @@ public class RabbitEvent {
 			return InteractionResult.PASS;
 		}
 		if (rabbit.getItemInHand(InteractionHand.MAIN_HAND).getItem().equals(Items.GOLDEN_CARROT)) {
-			MessageFunctions.sendMessage(player, "The killer rabbit has already been tamed.", ChatFormatting.DARK_GREEN);
+			MessageFunctions.sendTranslatableMessage(player, "collective.breedablekillerrabbit.message.killerrabbitalready", ChatFormatting.DARK_GREEN);
 			return InteractionResult.PASS;
 		}
 		
 		rabbit.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.GOLDEN_CARROT, 1));
 		itemstack.shrink(1);
-		MessageFunctions.sendMessage(player, "The killer rabbit has been tamed!", ChatFormatting.DARK_GREEN);
+		MessageFunctions.sendTranslatableMessage(player, "collective.breedablekillerrabbit.message.killerrabbittamed", ChatFormatting.DARK_GREEN);
 		return InteractionResult.SUCCESS;
 	}
 	
@@ -133,7 +133,7 @@ public class RabbitEvent {
 		}
 		
 		if (!((Rabbit)source).getVariant().equals(Rabbit.Variant.EVIL)) {
-			MessageFunctions.sendMessage((Player)entity, "The killer rabbit wants a golden carrot!", ChatFormatting.RED);
+			MessageFunctions.sendTranslatableMessage((Player)entity, "collective.breedablekillerrabbit.message.killerrabbitwants", ChatFormatting.RED);
 		}
 		
 		return damageAmount;
