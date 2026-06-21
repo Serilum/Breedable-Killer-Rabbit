@@ -58,6 +58,6 @@ public class NeoForgeRabbitEvent {
 	@SubscribeEvent
 	public static void onPlayerDamage(LivingDamageEvent.Post e) {
 		Entity entity = e.getEntity();
-		RabbitEvent.onPlayerDamage(entity.level(), entity, e.getSource(), e.getNewDamage());
+		RabbitEvent.onPlayerDamage(entity.level(), entity, e.getSource(), e.getHealthDamage());
 	}
 }

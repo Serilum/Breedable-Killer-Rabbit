@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "breedablekillerrabbit",
-  "version": "4.0",
+  "version": "4.1",
 
   "name": "Breedable Killer Rabbit",
   "description": "A minimalistic configurable mod which makes the killer rabbit tamable and available by breeding.",
@@ -23,7 +23,7 @@
     "fabric-api": "*",
     "minecraft": ">=26.1",
     "java": ">=25",
-    "collective": ">=8.25"
+    "collective": ">=8.29"
   },
 
   "custom": {
@@ -44,6 +44,7 @@
 	  " Andrean Olgo",
 	  " aternosorg",
 	  " Cherriesaurus",
+	  " Josh",
 	  " Linda Jansen",
 	  " Michelle Smith",
 	  " MWS",

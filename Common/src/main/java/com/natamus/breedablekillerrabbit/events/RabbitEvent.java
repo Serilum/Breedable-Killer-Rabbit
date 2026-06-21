@@ -24,11 +24,10 @@ import net.minecraft.world.phys.Vec3;
 
 public class RabbitEvent {
 	public static boolean onBaby(ServerLevel world, Animal parentA, Animal parentB, AgeableMob offspring) {
-		if (!(offspring instanceof Rabbit)) {
+		if (!(offspring instanceof Rabbit rabbit)) {
 			return true;
 		}
-		Rabbit rabbit = (Rabbit)offspring;
-		
+
 		double num = GlobalVariables.random.nextDouble();
 		if (num <= ConfigHandler.chanceBabyRabbitIsKiller) {
 			EntityFunctions.setRabbitVariant(rabbit, Rabbit.Variant.EVIL);
@@ -53,7 +52,7 @@ public class RabbitEvent {
 			return InteractionResult.PASS;
 		}
 		
-		if (!(entity instanceof Rabbit)) {
+		if (!(entity instanceof Rabbit rabbit)) {
 			return InteractionResult.PASS;
 		}
 		
@@ -62,8 +61,7 @@ public class RabbitEvent {
 		if (!itemstack.getItem().equals(Items.GOLDEN_CARROT)) {
 			return InteractionResult.PASS;
 		}
-		
-		Rabbit rabbit = (Rabbit)entity;
+
 		if (!rabbit.getVariant().equals(Rabbit.Variant.EVIL)) {
 			return InteractionResult.PASS;
 		}
