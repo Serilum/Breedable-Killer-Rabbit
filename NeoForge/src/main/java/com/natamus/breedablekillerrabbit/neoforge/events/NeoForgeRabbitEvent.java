@@ -33,7 +33,7 @@ public class NeoForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public static void onEntityInteract(PlayerInteractEvent.EntityInteractSpecific e) {
+	public static void onEntityInteract(PlayerInteractEvent.EntityInteract e) {
 		Level world = e.getLevel();
 		if (world.isClientSide()) {
 			return;
