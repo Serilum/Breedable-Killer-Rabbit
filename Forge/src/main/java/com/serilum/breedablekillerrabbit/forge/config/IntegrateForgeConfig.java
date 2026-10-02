@@ -1,7 +1,7 @@
-package com.natamus.breedablekillerrabbit.forge.config;
+package com.serilum.breedablekillerrabbit.forge.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.breedablekillerrabbit.util.Reference;
+import com.serilum.breedablekillerrabbit.util.Reference;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModLoadingContext;
 

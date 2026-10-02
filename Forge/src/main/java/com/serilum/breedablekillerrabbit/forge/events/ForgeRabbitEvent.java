@@ -1,6 +1,6 @@
-package com.natamus.breedablekillerrabbit.forge.events;
+package com.serilum.breedablekillerrabbit.forge.events;
 
-import com.natamus.breedablekillerrabbit.events.RabbitEvent;
+import com.serilum.breedablekillerrabbit.events.RabbitEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
