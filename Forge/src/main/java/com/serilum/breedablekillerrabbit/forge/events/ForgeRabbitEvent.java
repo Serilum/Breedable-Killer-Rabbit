@@ -1,20 +1,20 @@
-package com.natamus.breedablekillerrabbit.neoforge.events;
+package com.serilum.breedablekillerrabbit.forge.events;
 
-import com.natamus.breedablekillerrabbit.events.RabbitEvent;
+import com.serilum.breedablekillerrabbit.events.RabbitEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.Level;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
-import net.neoforged.neoforge.event.entity.living.BabyEntitySpawnEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-public class NeoForgeRabbitEvent {
+public class ForgeRabbitEvent {
 	@SubscribeEvent
 	public static void onBaby(BabyEntitySpawnEvent e) {
 		AgeableMob child = e.getChild();
@@ -43,7 +43,7 @@ public class NeoForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public static void onTarget(LivingIncomingDamageEvent e) {
+	public static void onTarget(LivingAttackEvent e) {
 		Entity entity = e.getEntity();
 		if (!RabbitEvent.onTarget(entity.level(), entity, e.getSource(), e.getAmount())) {
 			e.setCanceled(true);
@@ -56,8 +56,8 @@ public class NeoForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public static void onPlayerDamage(LivingDamageEvent.Post e) {
+	public static void onPlayerDamage(LivingHurtEvent e) {
 		Entity entity = e.getEntity();
-		RabbitEvent.onPlayerDamage(entity.level(), entity, e.getSource(), e.getNewDamage());
+		RabbitEvent.onPlayerDamage(entity.level(), entity, e.getSource(), e.getAmount());
 	}
 }

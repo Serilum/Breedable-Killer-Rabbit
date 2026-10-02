@@ -1,6 +1,6 @@
-package com.natamus.breedablekillerrabbit;
+package com.serilum.breedablekillerrabbit;
 
-import com.natamus.breedablekillerrabbit.config.ConfigHandler;
+import com.serilum.breedablekillerrabbit.config.ConfigHandler;
 
 public class ModCommon {
 

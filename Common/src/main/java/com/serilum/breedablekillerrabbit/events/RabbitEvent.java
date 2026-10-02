@@ -1,6 +1,6 @@
-package com.natamus.breedablekillerrabbit.events;
+package com.serilum.breedablekillerrabbit.events;
 
-import com.natamus.breedablekillerrabbit.config.ConfigHandler;
+import com.serilum.breedablekillerrabbit.config.ConfigHandler;
 import com.natamus.collective.data.GlobalVariables;
 import com.natamus.collective.functions.MessageFunctions;
 import net.minecraft.ChatFormatting;
