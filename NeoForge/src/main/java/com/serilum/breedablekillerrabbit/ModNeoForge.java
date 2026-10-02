@@ -1,8 +1,8 @@
-package com.natamus.breedablekillerrabbit;
+package com.serilum.breedablekillerrabbit;
 
-import com.natamus.breedablekillerrabbit.neoforge.config.IntegrateNeoForgeConfig;
-import com.natamus.breedablekillerrabbit.neoforge.events.NeoForgeRabbitEvent;
-import com.natamus.breedablekillerrabbit.util.Reference;
+import com.serilum.breedablekillerrabbit.neoforge.config.IntegrateNeoForgeConfig;
+import com.serilum.breedablekillerrabbit.neoforge.events.NeoForgeRabbitEvent;
+import com.serilum.breedablekillerrabbit.util.Reference;
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import net.neoforged.neoforge.common.NeoForge;
