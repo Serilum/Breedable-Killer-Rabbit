@@ -1,7 +1,7 @@
-package com.natamus.breedablekillerrabbit;
+package com.serilum.breedablekillerrabbit;
 
-import com.natamus.breedablekillerrabbit.events.RabbitEvent;
-import com.natamus.breedablekillerrabbit.util.Reference;
+import com.serilum.breedablekillerrabbit.events.RabbitEvent;
+import com.serilum.breedablekillerrabbit.util.Reference;
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveAnimalEvents;

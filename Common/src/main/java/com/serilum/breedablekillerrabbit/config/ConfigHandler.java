@@ -1,7 +1,7 @@
-package com.natamus.breedablekillerrabbit.config;
+package com.serilum.breedablekillerrabbit.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.breedablekillerrabbit.util.Reference;
+import com.serilum.breedablekillerrabbit.util.Reference;
 
 import java.util.Arrays;
 import java.util.HashMap;

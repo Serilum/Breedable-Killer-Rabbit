@@ -1,27 +1,20 @@
-package com.natamus.breedablekillerrabbit.forge.events;
+package com.serilum.breedablekillerrabbit.neoforge.events;
 
-import com.natamus.breedablekillerrabbit.events.RabbitEvent;
+import com.serilum.breedablekillerrabbit.events.RabbitEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.bus.BusGroup;
-import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.living.BabyEntitySpawnEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-import java.lang.invoke.MethodHandles;
-
-public class ForgeRabbitEvent {
-	public static void registerEventsInBus() {
-		BusGroup.DEFAULT.register(MethodHandles.lookup(), ForgeRabbitEvent.class);
-	}
-
+public class NeoForgeRabbitEvent {
 	@SubscribeEvent
 	public static void onBaby(BabyEntitySpawnEvent e) {
 		AgeableMob child = e.getChild();
@@ -40,7 +33,7 @@ public class ForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public static void onEntityInteract(PlayerInteractEvent.EntityInteractSpecific e) {
+	public static void onEntityInteract(PlayerInteractEvent.EntityInteract e) {
 		Level world = e.getLevel();
 		if (world.isClientSide()) {
 			return;
@@ -50,12 +43,11 @@ public class ForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public static boolean onTarget(LivingAttackEvent e) {
+	public static void onTarget(LivingIncomingDamageEvent e) {
 		Entity entity = e.getEntity();
 		if (!RabbitEvent.onTarget(entity.level(), entity, e.getSource(), e.getAmount())) {
-			return true;
+			e.setCanceled(true);
 		}
-		return false;
 	}
 	
 	@SubscribeEvent
@@ -64,8 +56,8 @@ public class ForgeRabbitEvent {
 	}
 	
 	@SubscribeEvent
-	public static void onPlayerDamage(LivingHurtEvent e) {
+	public static void onPlayerDamage(LivingDamageEvent.Post e) {
 		Entity entity = e.getEntity();
-		RabbitEvent.onPlayerDamage(entity.level(), entity, e.getSource(), e.getAmount());
+		RabbitEvent.onPlayerDamage(entity.level(), entity, e.getSource(), e.getHealthDamage());
 	}
 }

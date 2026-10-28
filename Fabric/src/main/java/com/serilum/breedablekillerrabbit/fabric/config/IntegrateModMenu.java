@@ -1,7 +1,7 @@
-package com.natamus.breedablekillerrabbit.fabric.config;
+package com.serilum.breedablekillerrabbit.fabric.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.breedablekillerrabbit.util.Reference;
+import com.serilum.breedablekillerrabbit.util.Reference;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 

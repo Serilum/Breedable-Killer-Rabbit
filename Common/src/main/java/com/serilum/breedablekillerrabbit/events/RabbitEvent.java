@@ -1,6 +1,6 @@
-package com.natamus.breedablekillerrabbit.events;
+package com.serilum.breedablekillerrabbit.events;
 
-import com.natamus.breedablekillerrabbit.config.ConfigHandler;
+import com.serilum.breedablekillerrabbit.config.ConfigHandler;
 import com.natamus.collective.data.GlobalVariables;
 import com.natamus.collective.functions.EntityFunctions;
 import com.natamus.collective.functions.MessageFunctions;
@@ -38,7 +38,7 @@ public class RabbitEvent {
 			Vec3 vec = offspring.position();
 			for (Entity entityaround : world.getEntities(null, new AABB(vec.x-10, vec.y-10, vec.z-10, vec.x+10, vec.y+10, vec.z+10))) {
 				if (entityaround instanceof Player player) {
-                    MessageFunctions.sendTranslatableMessage(player, "collective.breedablekillerrabbit.message.killerrabbitborn", ChatFormatting.DARK_GREEN);
+					MessageFunctions.sendTranslatableMessage(player, "collective.breedablekillerrabbit.message.killerrabbitborn", ChatFormatting.DARK_GREEN);
 					return true;
 				}
 			}

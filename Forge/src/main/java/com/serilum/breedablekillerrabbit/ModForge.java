@@ -1,8 +1,8 @@
-package com.natamus.breedablekillerrabbit;
+package com.serilum.breedablekillerrabbit;
 
-import com.natamus.breedablekillerrabbit.forge.config.IntegrateForgeConfig;
-import com.natamus.breedablekillerrabbit.forge.events.ForgeRabbitEvent;
-import com.natamus.breedablekillerrabbit.util.Reference;
+import com.serilum.breedablekillerrabbit.forge.config.IntegrateForgeConfig;
+import com.serilum.breedablekillerrabbit.forge.events.ForgeRabbitEvent;
+import com.serilum.breedablekillerrabbit.util.Reference;
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
@@ -30,7 +30,7 @@ public class ModForge {
 	}
 
 	private void loadComplete(final FMLLoadCompleteEvent event) {
-    	ForgeRabbitEvent.registerEventsInBus();
+		ForgeRabbitEvent.registerEventsInBus();
 	}
 
 	private static void setGlobalConstants() {
